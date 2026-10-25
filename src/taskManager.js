@@ -55,6 +55,18 @@
   }
 
   /**
+   * Returns a new array with the matching task's text updated.
+   */
+  function editTask(tasks, id, newText) {
+    return tasks.map(function (task) {
+      if (task.id === id) {
+        task.text = newText;
+      }
+      return task;
+    });
+  }
+
+  /**
    * Returns a new array with all completed tasks removed.
    */
   function clearCompleted(tasks) {
@@ -89,6 +101,7 @@
   exports.addTask = addTask;
   exports.toggleTask = toggleTask;
   exports.deleteTask = deleteTask;
+  exports.editTask = editTask;
   exports.clearCompleted = clearCompleted;
   exports.getActiveCount = getActiveCount;
   exports.filterTasks = filterTasks;
